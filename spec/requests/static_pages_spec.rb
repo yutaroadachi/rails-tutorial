@@ -11,7 +11,7 @@ RSpec.describe "StaticPages", type: :request do
     end
 
     it "適切なタイトルが表示されていること" do
-      assert_select "title", "Home | Ruby on Rails Tutorial Sample App"
+      assert_select "title", "Ruby on Rails Tutorial Sample App"
     end
   end
 
