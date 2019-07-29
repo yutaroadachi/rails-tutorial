@@ -6,33 +6,33 @@ RSpec.describe "SiteLayout", type: :system do
       visit root_path
     end
 
-    describe "各リンクが正常に機能していること" do
-      it "ロゴ" do
+    describe "各リンクをクリックする" do
+      it "ロゴをクリックする" do
         click_link "sample app"
         expect(page).to have_current_path root_path
       end
 
-      it "Home" do
+      it "Homeをクリックする" do
         click_link "Home"
         expect(page).to have_current_path root_path
       end
 
-      it "Help" do
+      it "Helpをクリックする" do
         click_link "Help"
         expect(page).to have_current_path help_path
       end
 
-      it "About" do
+      it "Aboutをクリックする" do
         click_link "About"
         expect(page).to have_current_path about_path
       end
 
-      it "Contact" do
+      it "Contactをクリックする" do
         click_link "Contact"
         expect(page).to have_current_path contact_path
       end
 
-      it "Sign up now!" do
+      it "Sign up now!をクリックする" do
         click_on "Sign up now!"
         expect(page).to have_current_path signup_path
       end
