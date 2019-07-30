@@ -37,5 +37,14 @@ RSpec.describe "UsersSignup", type: :system do
     }.to change(User, :count).by(1)
 
     expect(page).to have_current_path user_path(User.find_by(email: EXAMPLE_EMAIL).id)
+
+    within "header" do
+      expect(page).to have_content "Users"
+      expect(page).to have_content "Account"
+      expect(page).to have_content "Profile"
+      expect(page).to have_content "Settings"
+      expect(page).to have_content "Log out"
+      expect(page).to_not have_content "Log in"
+    end
   end
 end
