@@ -50,5 +50,19 @@ RSpec.describe "UsersLogin", type: :system do
       expect(page).to_not have_content "Log out"
       expect(page).to have_content "Log in"
     end
+
+    # 2番目のウィンドウでログアウトをクリックするユーザーをシミュレートする
+    delete logout_url
+
+    expect(page).to have_current_path root_path
+
+    within "header" do
+      expect(page).to_not have_content "Users"
+      expect(page).to_not have_content "Account"
+      expect(page).to_not have_content "Profile"
+      expect(page).to_not have_content "Settings"
+      expect(page).to_not have_content "Log out"
+      expect(page).to have_content "Log in"
+    end
   end
 end
